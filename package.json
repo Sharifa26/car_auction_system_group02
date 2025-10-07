@@ -1,0 +1,31 @@
+{
+  "name": "car_auction_system_group02",
+  "version": "1.0.0",
+  "description": "This project is a backend API built with Node.js, Express.js, and MongoDB to manage car auctions, allowing dealers to place bids and retrieve the highest bidder.",
+  "homepage": "https://github.com/Sharifa26/car_auction_system_group02#readme",
+  "bugs": {
+    "url": "https://github.com/Sharifa26/car_auction_system_group02/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sharifa26/car_auction_system_group02.git"
+  },
+  "license": "ISC",
+  "author": "Group-node-02",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.19.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
