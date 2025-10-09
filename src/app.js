@@ -3,8 +3,8 @@ const bodyParser = require('body-parser');
 const authRoute = require('../src/routes/authRoute');
 const carsRoute = require('../src/routes/carsRoute');
 const dealersRoute = require('../src/routes/dealersRoute');
-const auctionRoutes = require('./routes/auctionRoutes');
-const bidRoutes = require('./routes/bidRoutes');
+const auctionRoutes = require('./routes/auctionRoute');
+const bidRoutes = require('./routes/bidRoute');
 
 
 const app = express();

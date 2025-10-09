@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { createAuction, updateAuctionStatus, getAuctionWinner } = require('../controllers/auctionController');
+const adminAuth = require('../middlewares/adminAuth');
 
 
 // Create a new auction (Admin only)
