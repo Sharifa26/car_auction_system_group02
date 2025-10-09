@@ -2,3 +2,4 @@ node_modules
 .tap
 .env
 .env.test
+.vscode
