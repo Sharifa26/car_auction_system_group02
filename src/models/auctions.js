@@ -1,11 +1,10 @@
-
-
 const mongoose = require('mongoose');
 
 const auctionSchema = new mongoose.Schema({
   carInfo: {
-    type: String,
-    required: true
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'cars',
+    required: true,
   },
   basePrice: {
     type: Number,
@@ -13,11 +12,11 @@ const auctionSchema = new mongoose.Schema({
   },
   startTime: {
     type: Date,
+    default: Date.now(),
     required: true
   },
   endTime: {
-    type: Date,
-    required: true
+    type: Date
   },
   status: {
     type: String,
@@ -27,6 +26,10 @@ const auctionSchema = new mongoose.Schema({
   createdBy: {
     type: String,
     default: 'admin' // since only admin can create
+  },
+  winner: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'dealers'
   }
 });
 

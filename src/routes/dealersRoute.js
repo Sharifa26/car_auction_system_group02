@@ -1,12 +1,13 @@
 const express = require('express');
 const { createDealer, getAllDealers, getDealerById, updateDealer, deleteDealer } = require('../controllers/dealersController');
-const { verifyToken } = require('../middlewares/authMiddleware');
+const adminAuth = require('../middlewares/adminAuth');
+
 
 const router = express.Router();
-router.post("/", verifyToken, createDealer);
-router.get("/", verifyToken, getAllDealers);
-router.get("/:id", verifyToken, getDealerById);
-router.patch("/:id", verifyToken, updateDealer);
-router.delete("/:id", verifyToken, deleteDealer);
+router.post("/", adminAuth, createDealer);
+router.get("/", adminAuth, getAllDealers);
+router.get("/:id", adminAuth, getDealerById);
+router.patch("/:id", adminAuth, updateDealer);
+router.delete("/:id", adminAuth, deleteDealer);
 
 module.exports = router;

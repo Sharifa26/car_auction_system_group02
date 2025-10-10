@@ -4,13 +4,8 @@ const { createAuction, updateAuctionStatus, getAuctionWinner } = require('../con
 const adminAuth = require('../middlewares/adminAuth');
 
 
-// Create a new auction (Admin only)
 router.post('/createAuction', adminAuth, createAuction);
-
-// Update auction status (Admin only)
 router.patch('/status/:auctionId', adminAuth, updateAuctionStatus);
-
-// Get the winner of an auction
-router.get('/:auctionId/winner', getAuctionWinner);
+router.get('/:auctionId/winner', adminAuth, getAuctionWinner);
 
 module.exports = router;

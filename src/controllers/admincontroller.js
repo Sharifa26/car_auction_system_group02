@@ -29,7 +29,7 @@ const loginAdmin = async (req, res) => {
 
     // Generate JWT
     const token = jwt.sign({ adminId: admin._id, role: 'admin' }, process.env.JWT_SECRET, { expiresIn: '1d' });
-    res.json({ message: 'Login successful', token });
+    res.status(200).json({ message: 'Login successful', token });
   } catch (err) {
     res.status(400).json({ message: err.message });
   }

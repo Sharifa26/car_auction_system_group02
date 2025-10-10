@@ -1,17 +1,18 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const authRoute = require('../src/routes/authRoute');
 const carsRoute = require('../src/routes/carsRoute');
 const dealersRoute = require('../src/routes/dealersRoute');
-const auctionRoutes = require('./routes/auctionRoute');
-const bidRoutes = require('./routes/bidRoute');
+const auctionRoutes = require('../src/routes/auctionRoute');
+const bidRoutes = require('../src/routes/bidRoute');
+const adminRoute = require('../src/routes/adminRoute');
 
 
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use('/api/v1/auction', authRoute);
+
+app.use('/api/v1/admin', adminRoute);
 app.use('/api/v1/car', carsRoute);
 app.use('/api/v1/dealers', dealersRoute);
 app.use('/api/v1/auction', auctionRoutes);
